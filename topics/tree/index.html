@@ -3,69 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GR_CODE | Complete FAANG Trees</title>
+  <title>GR_CODE | Compact FAANG Trees</title>
   <style>
     *{box-sizing:border-box;margin:0;padding:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-    :root{--bg:#050816;--card:#0f172a;--card2:#111827;--muted:#94a3b8;--text:#e5e7eb;--accent:#38bdf8;--accent2:#a78bfa;--good:#22c55e;--warn:#facc15;--bad:#fb7185;--line:#475569;--border:#334155}
-    body.light{--bg:#f8fafc;--card:#ffffff;--card2:#f1f5f9;--muted:#475569;--text:#0f172a;--line:#94a3b8;--border:#cbd5e1}
-    html{scroll-behavior:smooth}
-    body{background:radial-gradient(circle at top left,rgba(56,189,248,.18),transparent 35%),radial-gradient(circle at top right,rgba(167,139,250,.18),transparent 35%),var(--bg);color:var(--text);padding:22px}
-    .wrap{max-width:1400px;margin:auto}
-    .top{position:sticky;top:10px;z-index:50;background:rgba(15,23,42,.92);backdrop-filter:blur(14px);border:1px solid var(--border);border-radius:22px;padding:14px;display:flex;justify-content:space-between;align-items:center;gap:14px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
-    body.light .top{background:rgba(255,255,255,.92)}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:1000;letter-spacing:.08em}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#020617;font-weight:1000}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav a,.btn,select{border:1px solid var(--border);background:var(--card2);color:var(--text);padding:10px 13px;border-radius:999px;font-weight:800;text-decoration:none;cursor:pointer}.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#020617;border:0}.btn:hover,.nav a:hover{transform:translateY(-1px);border-color:var(--accent)}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin:22px 0}.card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:22px;box-shadow:0 22px 55px rgba(0,0,0,.25)}h1{font-size:clamp(2.4rem,6vw,5.8rem);line-height:.95;background:linear-gradient(90deg,var(--accent),var(--accent2),#f472b6);-webkit-background-clip:text;color:transparent;margin-bottom:14px}h2{font-size:1.55rem;margin:8px 0 14px;color:var(--accent)}h3{margin:16px 0 9px;color:var(--warn)}p,li{color:var(--muted);line-height:1.7}ul,ol{padding-left:22px}.badges{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.badge{background:var(--card2);border:1px solid var(--border);border-radius:999px;padding:8px 12px;font-weight:800;color:var(--text)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:16px 0}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}.mini{background:var(--card2);border:1px solid var(--border);border-radius:18px;padding:16px}.stage{min-height:440px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(2,6,23,.65),rgba(15,23,42,.35));border-radius:22px;position:relative;overflow:auto;margin-top:14px}body.light .stage{background:#f8fafc}.treeSvg{width:100%;min-width:840px;height:430px}.edge{stroke:var(--line);stroke-width:4;transition:.35s}.edge.active{stroke:var(--warn);stroke-width:6}.node circle{fill:#1e293b;stroke:var(--accent);stroke-width:4;transition:.35s}.node text{fill:#fff;text-anchor:middle;dominant-baseline:central;font-weight:1000;font-size:18px}.node.active circle{fill:var(--warn);stroke:#fff;filter:drop-shadow(0 0 14px rgba(250,204,21,.85))}.node.visited circle{fill:var(--good);stroke:#dcfce7}.node.target circle{fill:var(--bad);stroke:#ffe4e6}.node.dim{opacity:.25}.info{background:var(--card2);border:1px solid var(--border);border-radius:18px;padding:14px;margin-top:12px;color:var(--warn);font-weight:900;min-height:52px}.controls{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.code{background:#020617;color:#d1fae5;border:1px solid #334155;border-radius:18px;padding:18px;overflow:auto;white-space:pre;font-family:Consolas,monospace;line-height:1.55}.code mark{background:#facc15;color:#020617;border-radius:6px;padding:2px 4px}table{width:100%;border-collapse:collapse;margin-top:12px}th,td{border:1px solid var(--border);padding:12px;text-align:left;color:var(--muted)}th{background:var(--card2);color:var(--warn)}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.tab{padding:9px 12px;border-radius:999px;border:1px solid var(--border);background:var(--card2);cursor:pointer;font-weight:800}.tab.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#020617}.array{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.box{width:52px;height:52px;border-radius:14px;background:#1e293b;border:2px solid var(--border);display:grid;place-items:center;font-weight:1000;transition:.3s}.box.active{background:var(--warn);color:#020617;transform:translateY(-8px)}.box.done{background:var(--good)}.trie{font-family:monospace;white-space:pre;color:#a7f3d0;background:#020617;border-radius:18px;padding:18px;border:1px solid #334155;overflow:auto}.footer{margin:30px 0;text-align:center;color:var(--muted)}@media(max-width:950px){.hero,.two{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.top{position:static;align-items:flex-start;flex-direction:column}.nav{max-height:120px;overflow:auto}body{padding:12px}}
+    :root{--bg:#050816;--panel:#0f172a;--panel2:#111827;--soft:#1e293b;--text:#e5e7eb;--muted:#94a3b8;--accent:#38bdf8;--accent2:#a78bfa;--good:#22c55e;--warn:#facc15;--bad:#fb7185;--border:#334155;--line:#64748b}
+    body.light{--bg:#f8fafc;--panel:#ffffff;--panel2:#f1f5f9;--soft:#e2e8f0;--text:#0f172a;--muted:#475569;--border:#cbd5e1;--line:#94a3b8}
+    body{min-height:100vh;background:radial-gradient(circle at top left,rgba(56,189,248,.18),transparent 34%),radial-gradient(circle at top right,rgba(167,139,250,.16),transparent 34%),var(--bg);color:var(--text);padding:16px;overflow-x:hidden}
+    .app{max-width:1450px;margin:auto;display:grid;grid-template-rows:auto 1fr;gap:14px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(15,23,42,.92);border:1px solid var(--border);border-radius:22px;padding:14px 16px;backdrop-filter:blur(14px);box-shadow:0 18px 50px rgba(0,0,0,.26)}
+    body.light .topbar{background:rgba(255,255,255,.92)}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:1000;letter-spacing:.07em}.logo{width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;color:#020617}.title small{display:block;color:var(--muted);font-weight:700;letter-spacing:0;text-transform:none;margin-top:2px}.top-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    button,select{border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:999px;padding:10px 14px;font-weight:850;cursor:pointer;transition:.2s}button:hover,select:hover{border-color:var(--accent);transform:translateY(-1px)}.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#020617;border:0}.danger{background:rgba(251,113,133,.14);border-color:rgba(251,113,133,.45)}
+    .main{display:grid;grid-template-columns:285px 1fr;gap:14px;min-height:calc(100vh - 110px)}
+    .sidebar,.panel{background:rgba(15,23,42,.9);border:1px solid var(--border);border-radius:22px;box-shadow:0 18px 48px rgba(0,0,0,.22);backdrop-filter:blur(14px)}body.light .sidebar,body.light .panel{background:rgba(255,255,255,.94)}
+    .sidebar{padding:14px;position:sticky;top:14px;height:calc(100vh - 110px);overflow:auto}.search{width:100%;border:1px solid var(--border);background:var(--panel2);color:var(--text);border-radius:16px;padding:12px 14px;margin:8px 0 12px;font-weight:700}.topic{width:100%;text-align:left;margin:6px 0;border-radius:16px;display:flex;align-items:center;justify-content:space-between;gap:10px}.topic.active{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#020617;border:0}.topic span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.tag{font-size:.72rem;background:rgba(148,163,184,.18);border:1px solid var(--border);border-radius:999px;padding:4px 7px}.topic.active .tag{background:rgba(2,6,23,.16);border-color:rgba(2,6,23,.15);color:#020617}
+    .content{display:grid;grid-template-columns:1.08fr .92fr;gap:14px}.panel{padding:18px;min-width:0}.learn-head{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:10px}.learn-head h1{font-size:clamp(1.6rem,3vw,3rem);line-height:1.05;background:linear-gradient(90deg,var(--accent),var(--accent2),#f472b6);-webkit-background-clip:text;color:transparent}.learn-head p{color:var(--muted);line-height:1.6;margin-top:8px}.badges{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.badge{background:var(--panel2);border:1px solid var(--border);border-radius:999px;padding:7px 10px;color:var(--text);font-weight:800;font-size:.85rem}.stage{height:420px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(180deg,rgba(2,6,23,.55),rgba(15,23,42,.35));overflow:auto;position:relative}body.light .stage{background:#f8fafc}.status{margin-top:10px;background:var(--panel2);border:1px solid var(--border);border-radius:16px;padding:13px;min-height:52px;color:var(--warn);font-weight:900;line-height:1.4}.controls{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}.details{display:grid;grid-template-rows:auto auto 1fr;gap:12px}.card{background:var(--panel2);border:1px solid var(--border);border-radius:18px;padding:16px}.card h2{color:var(--accent);font-size:1.25rem;margin-bottom:10px}.card h3{color:var(--warn);font-size:1rem;margin:12px 0 7px}p,li{color:var(--muted);line-height:1.65}ul,ol{padding-left:20px}.code{background:#020617;color:#d1fae5;border:1px solid #334155;border-radius:18px;padding:16px;overflow:auto;white-space:pre;font-family:Consolas,"Courier New",monospace;line-height:1.55;font-size:.92rem;max-height:420px}.switcher{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.pill{border-radius:999px;padding:8px 11px;background:var(--soft);border:1px solid var(--border);font-size:.85rem}.pill.active{background:var(--warn);color:#020617;border:0}.complexity{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{background:var(--soft);border:1px solid var(--border);border-radius:14px;padding:11px}.metric strong{display:block;color:var(--warn);margin-bottom:4px}.treeSvg{width:100%;min-width:760px;height:410px}.edge{stroke:var(--line);stroke-width:4;transition:.25s}.edge.active{stroke:var(--warn);stroke-width:6}.node circle{fill:#1e293b;stroke:var(--accent);stroke-width:4;transition:.25s}.node text{fill:#fff;text-anchor:middle;dominant-baseline:central;font-weight:1000;font-size:18px}.node.active circle{fill:var(--warn);stroke:#fff;filter:drop-shadow(0 0 12px rgba(250,204,21,.85))}.node.visited circle{fill:var(--good);stroke:#dcfce7}.node.target circle{fill:var(--bad);stroke:#ffe4e6}.node.dim{opacity:.22}.arr{display:flex;gap:8px;flex-wrap:wrap;padding:18px}.box{width:54px;height:54px;border-radius:14px;background:#1e293b;border:2px solid var(--border);display:grid;place-items:center;font-weight:1000;transition:.25s}.box.active{background:var(--warn);color:#020617;transform:translateY(-8px)}.box.done{background:var(--good);color:#052e16}.textviz{padding:20px;font-family:Consolas,monospace;white-space:pre;color:#a7f3d0;line-height:1.55;font-size:1rem}.treeprint{display:flex;align-items:center;justify-content:center;height:100%;font-family:Consolas,monospace;white-space:pre;color:#a7f3d0;font-size:1.1rem;line-height:1.45}.progress{height:10px;background:var(--soft);border-radius:999px;overflow:hidden;margin-top:10px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:.25s}.mobile-topic{display:none;width:100%;margin-top:10px;border-radius:16px}
+    @media(max-width:1100px){.main{grid-template-columns:1fr}.sidebar{position:static;height:auto}.content{grid-template-columns:1fr}.topic-list{display:none}.mobile-topic{display:block}.stage{height:360px}.topbar{align-items:flex-start;flex-direction:column}.top-actions{width:100%}}
   </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="top">
-    <div class="brand"><div class="logo">GR</div><div>GR_CODE TREES</div></div>
-    <div class="nav">
-      <a href="#basics">Basics</a><a href="#traversal">Traversal</a><a href="#bst">BST</a><a href="#lca">LCA</a><a href="#diameter">Diameter</a><a href="#heap">Heap</a><a href="#trie">Trie</a><a href="#segment">Segment</a><button class="btn" onclick="toggleTheme()">Theme</button>
-    </div>
-  </div>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><div class="logo">GR</div><div class="title">GR_CODE TREES<small>Compact FAANG tree mastery with clean animations</small></div></div>
+    <div class="top-actions"><select id="mobileTopic" class="mobile-topic"></select><button onclick="toggleTheme()">Theme</button><button class="danger" onclick="resetCurrent()">Reset Animation</button></div>
+  </header>
 
-  <section class="hero">
-    <div class="card">
-      <h1>Complete FAANG Trees</h1>
-      <p>End-to-end animated Trees module for your GR_CODE project. Learn every major interview pattern with visual animation, C-style logic, complexity, and must-solve problems.</p>
-      <div class="badges"><span class="badge">Binary Tree</span><span class="badge">BST</span><span class="badge">DFS/BFS</span><span class="badge">LCA</span><span class="badge">Diameter</span><span class="badge">Heap</span><span class="badge">Trie</span><span class="badge">Segment Tree</span></div>
-    </div>
-    <div class="card">
-      <h2>FAANG Roadmap</h2>
-      <ol><li>Understand node, edge, root, leaf, height, depth.</li><li>Master DFS and BFS traversals.</li><li>Learn BST search, insert, delete, validate.</li><li>Solve recursion return-value problems.</li><li>Master LCA, diameter, max path, views.</li><li>Finish Trie, Heap, Segment Tree.</li></ol>
-    </div>
-  </section>
+  <main class="main">
+    <aside class="sidebar">
+      <input class="search" id="search" placeholder="Search topic..." oninput="renderTopics()" />
+      <div id="topicList" class="topic-list"></div>
+    </aside>
 
-  <section id="basics" class="card">
-    <h2>1. Tree Basics</h2>
-    <div class="grid"><div class="mini"><h3>Root</h3><p>Top node of the tree.</p></div><div class="mini"><h3>Leaf</h3><p>Node without children.</p></div><div class="mini"><h3>Height</h3><p>Longest path from node to leaf.</p></div><div class="mini"><h3>Depth</h3><p>Distance from root to node.</p></div><div class="mini"><h3>Subtree</h3><p>Any smaller tree inside a tree.</p></div><div class="mini"><h3>Balanced</h3><p>Left and right heights differ by at most 1.</p></div></div>
-    <pre class="code">typedef struct Node {
+    <section class="content">
+      <div class="panel">
+        <div class="learn-head"><div><h1 id="topicTitle">Trees</h1><p id="topicSubtitle"></p></div></div>
+        <div class="badges" id="badges"></div>
+        <div class="controls" id="controls"></div>
+        <div class="stage" id="stage"></div>
+        <div class="status" id="status">Choose a topic from the left.</div>
+        <div class="progress"><div class="bar" id="bar"></div></div>
+      </div>
+
+      <div class="details">
+        <div class="card"><h2>Concept</h2><div id="concept"></div></div>
+        <div class="card"><h2>Pattern / Interview Notes</h2><div id="notes"></div></div>
+        <div class="card"><div class="switcher"><button class="pill active" onclick="showCode('c')" id="tabC">C Code</button><button class="pill" onclick="showCode('pseudo')" id="tabP">Pseudo</button><button class="pill" onclick="showCode('problems')" id="tabProblems">Problems</button></div><pre class="code" id="codeBox"></pre></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+const baseNodes={50:[380,55],30:[245,155],70:[515,155],20:[160,275],40:[310,275],60:[450,275],80:[610,275]};
+const baseEdges=[[50,30],[50,70],[30,20],[30,40],[70,60],[70,80]];
+let current='basics', animToken=0, codeMode='c';
+function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
+function stopAnim(){animToken++;setBar(0)}
+function setStatus(t){document.getElementById('status').innerHTML=t}
+function setBar(p){document.getElementById('bar').style.width=p+'%'}
+function esc(s){return String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]))}
+
+const topics={
+ basics:{name:'Tree Basics',tag:'Core',subtitle:'Understand nodes, edges, root, leaf, height, depth, and recursion base.',badges:['Root','Leaf','Height','Depth','Subtree'],concept:`<ul><li>A tree is a hierarchical data structure.</li><li>Every node can have children.</li><li>Binary tree means each node has max two children.</li><li>Most tree problems are solved using recursion.</li></ul>`,notes:`<ul><li>Always handle <b>root == NULL</b>.</li><li>Think: what should this node return to its parent?</li><li>Tree recursion usually means solve left subtree, solve right subtree, combine answer.</li></ul>`,viz:'tree',actions:[['Show Terms','animateBasics']],c:`typedef struct Node {
     int data;
     struct Node *left;
     struct Node *right;
-} Node;</pre>
-  </section>
+} Node;
 
-  <section id="traversal" class="card">
-    <h2>2. Animated DFS / BFS Traversal</h2>
-    <p>Use this one tree to understand Inorder, Preorder, Postorder and BFS Level Order.</p>
-    <div class="controls"><button class="btn primary" onclick="animateOrder('inorder')">Inorder</button><button class="btn primary" onclick="animateOrder('preorder')">Preorder</button><button class="btn primary" onclick="animateOrder('postorder')">Postorder</button><button class="btn primary" onclick="animateOrder('bfs')">BFS Level Order</button><button class="btn" onclick="resetTree()">Reset</button></div>
-    <div class="stage"><svg class="treeSvg" viewBox="0 0 900 430" id="mainSvg"></svg></div>
-    <div class="info" id="traversalInfo">Select a traversal to start animation.</div>
-    <div class="two"><pre class="code" id="traversalCode">Inorder: left → root → right
-Preorder: root → left → right
-Postorder: left → right → root
-BFS: level by level using queue</pre><div class="mini"><h3>Output</h3><p id="traversalOutput" style="font-size:1.3rem;color:var(--warn);font-weight:1000">-</p></div></div>
-  </section>
+Node* createNode(int val) {
+    Node *n = malloc(sizeof(Node));
+    n->data = val;
+    n->left = NULL;
+    n->right = NULL;
+    return n;
+}`,pseudo:`tree(node):
+    value
+    left child
+    right child
 
-  <section id="bst" class="card">
-    <h2>3. Animated BST Search / Insert / Delete</h2>
-    <p>BST rule: left side has smaller values, right side has bigger values.</p>
-    <div class="controls"><button class="btn primary" onclick="bstSearchAnim(60)">Search 60</button><button class="btn primary" onclick="bstInsertAnim(65)">Insert 65</button><button class="btn primary" onclick="bstDeleteAnim(70)">Delete 70 Demo</button><button class="btn" onclick="resetTree()">Reset</button></div>
-    <div class="info" id="bstInfo">BST animation status will appear here.</div>
-    <div class="two"><pre class="code">Node* searchBST(Node *root, int key) {
+solve(root):
+    if root is NULL:
+        return base answer
+    leftAnswer = solve(root.left)
+    rightAnswer = solve(root.right)
+    return combine(leftAnswer, root, rightAnswer)`,problems:`Must know:
+1. Maximum Depth
+2. Same Tree
+3. Invert Binary Tree
+4. Symmetric Tree
+5. Count Nodes
+6. Count Leaves`},
+ traversal:{name:'DFS & BFS Traversals',tag:'Must',subtitle:'Inorder, preorder, postorder, and level-order animations in one place.',badges:['Inorder','Preorder','Postorder','BFS'],concept:`<ul><li><b>DFS</b> goes deep first using recursion or stack.</li><li><b>BFS</b> goes level by level using queue.</li><li>BST inorder traversal gives sorted order.</li></ul>`,notes:`<ul><li>Inorder: Left → Root → Right.</li><li>Preorder: Root → Left → Right.</li><li>Postorder: Left → Right → Root.</li><li>BFS: Queue + level size.</li></ul>`,viz:'tree',actions:[['Inorder','runOrder:inorder'],['Preorder','runOrder:preorder'],['Postorder','runOrder:postorder'],['BFS','runOrder:bfs']],c:`void inorder(Node *root) {
+    if (root == NULL) return;
+    inorder(root->left);
+    printf("%d ", root->data);
+    inorder(root->right);
+}
+
+void preorder(Node *root) {
+    if (root == NULL) return;
+    printf("%d ", root->data);
+    preorder(root->left);
+    preorder(root->right);
+}
+
+void postorder(Node *root) {
+    if (root == NULL) return;
+    postorder(root->left);
+    postorder(root->right);
+    printf("%d ", root->data);
+}`,pseudo:`DFS(node):
+    if node == NULL: return
+
+Inorder:
+    DFS(left)
+    visit(root)
+    DFS(right)
+
+Preorder:
+    visit(root)
+    DFS(left)
+    DFS(right)
+
+Postorder:
+    DFS(left)
+    DFS(right)
+    visit(root)
+
+BFS:
+    push root into queue
+    while queue not empty:
+        pop node
+        visit node
+        push children`,problems:`Traversal problems:
+1. Binary Tree Inorder Traversal
+2. Binary Tree Preorder Traversal
+3. Binary Tree Postorder Traversal
+4. Binary Tree Level Order Traversal
+5. Zigzag Level Order Traversal
+6. Binary Tree Right Side View`},
+ bst:{name:'Binary Search Tree',tag:'BST',subtitle:'Search, insert, delete, validate, and kth smallest patterns.',badges:['Search','Insert','Delete','Validate','Kth Smallest'],concept:`<ul><li>BST rule: left values are smaller, right values are larger.</li><li>Balanced BST gives O(log n) search.</li><li>Worst-case skewed BST becomes O(n).</li></ul>`,notes:`<ul><li>Inorder of BST is sorted.</li><li>Validate using min/max bounds, not only local child check.</li><li>Delete has 3 cases: leaf, one child, two children.</li></ul>`,viz:'tree',actions:[['Search 60','bstSearch'],['Insert 65','bstInsert'],['Delete 70','bstDelete'],['Validate Path','bstValidate']],c:`Node* searchBST(Node *root, int key) {
     if (root == NULL || root->data == key)
         return root;
 
@@ -73,7 +150,9 @@ BFS: level by level using queue</pre><div class="mini"><h3>Output</h3><p id="tra
         return searchBST(root->left, key);
 
     return searchBST(root->right, key);
-}</pre><pre class="code">Node* insertBST(Node *root, int val) {
+}
+
+Node* insertBST(Node *root, int val) {
     if (root == NULL)
         return createNode(val);
 
@@ -83,15 +162,60 @@ BFS: level by level using queue</pre><div class="mini"><h3>Output</h3><p id="tra
         root->right = insertBST(root->right, val);
 
     return root;
-}</pre></div>
-  </section>
+}`,pseudo:`Search key:
+    if root is NULL or root == key:
+        return root
+    if key < root:
+        go left
+    else:
+        go right
 
-  <section id="lca" class="card">
-    <h2>4. Animated Lowest Common Ancestor</h2>
-    <p>LCA is the lowest node that is ancestor of both target nodes.</p>
-    <div class="controls"><button class="btn primary" onclick="lcaAnim(20,40)">LCA(20,40)</button><button class="btn primary" onclick="lcaAnim(20,80)">LCA(20,80)</button><button class="btn primary" onclick="lcaAnim(60,80)">LCA(60,80)</button></div>
-    <div class="info" id="lcaInfo">Choose an LCA example.</div>
-    <pre class="code">Node* LCA(Node *root, Node *p, Node *q) {
+Delete:
+    case 1: no child -> remove
+    case 2: one child -> connect child
+    case 3: two children -> replace with inorder successor`,problems:`BST problems:
+1. Validate Binary Search Tree
+2. Kth Smallest Element in BST
+3. Lowest Common Ancestor of BST
+4. Delete Node in BST
+5. Convert Sorted Array to BST
+6. Recover Binary Search Tree`},
+ height:{name:'Height, Diameter, Balance',tag:'DFS',subtitle:'The most important postorder return-value pattern.',badges:['Height','Diameter','Balanced','Postorder'],concept:`<ul><li>Height is longest path from node to leaf.</li><li>Diameter is longest path between any two nodes.</li><li>Balanced tree checks height difference at every node.</li></ul>`,notes:`<ul><li>Diameter helper returns height but updates global diameter.</li><li>Balanced helper can return -1 when unbalanced.</li><li>This pattern appears in many medium/hard problems.</li></ul>`,viz:'tree',actions:[['Height','heightAnim'],['Diameter','diameterAnim'],['Balance Check','balanceAnim']],c:`int height(Node *root) {
+    if (root == NULL) return 0;
+
+    int left = height(root->left);
+    int right = height(root->right);
+
+    return 1 + (left > right ? left : right);
+}
+
+int helper(Node *root, int *diameter) {
+    if (root == NULL) return 0;
+
+    int left = helper(root->left, diameter);
+    int right = helper(root->right, diameter);
+
+    if (left + right > *diameter)
+        *diameter = left + right;
+
+    return 1 + (left > right ? left : right);
+}`,pseudo:`For each node:
+    leftHeight = solve(left)
+    rightHeight = solve(right)
+
+Height:
+    return 1 + max(leftHeight, rightHeight)
+
+Diameter:
+    diameter = max(diameter, leftHeight + rightHeight)
+    return height`,problems:`Problems:
+1. Maximum Depth of Binary Tree
+2. Diameter of Binary Tree
+3. Balanced Binary Tree
+4. Minimum Depth
+5. Binary Tree Maximum Path Sum
+6. Count Complete Tree Nodes`},
+ lca:{name:'Lowest Common Ancestor',tag:'FAANG',subtitle:'Find the lowest node that contains both targets in its subtree.',badges:['LCA','Ancestor','Paths'],concept:`<ul><li>LCA is the lowest node that is ancestor of both given nodes.</li><li>In binary tree, search both left and right.</li><li>In BST, use value ordering to move left/right.</li></ul>`,notes:`<ul><li>If left and right both return non-null, current node is LCA.</li><li>If only one side returns non-null, pass that answer upward.</li><li>For BST LCA, compare both values with root.</li></ul>`,viz:'tree',actions:[['LCA(20,40)','lca:20:40'],['LCA(20,80)','lca:20:80'],['LCA(60,80)','lca:60:80']],c:`Node* LCA(Node *root, Node *p, Node *q) {
     if (root == NULL || root == p || root == q)
         return root;
 
@@ -102,198 +226,256 @@ BFS: level by level using queue</pre><div class="mini"><h3>Output</h3><p id="tra
         return root;
 
     return left ? left : right;
-}</pre>
-  </section>
+}`,pseudo:`LCA(root, p, q):
+    if root is NULL or root is p or root is q:
+        return root
 
-  <section id="diameter" class="card">
-    <h2>5. Animated Height / Diameter</h2>
-    <p>Diameter is the longest path between any two nodes. It may or may not pass through root.</p>
-    <div class="controls"><button class="btn primary" onclick="diameterAnim()">Animate Diameter</button><button class="btn primary" onclick="heightAnim()">Animate Height</button></div>
-    <div class="info" id="diameterInfo">Click animation.</div>
-    <pre class="code">int helper(Node *root, int *diameter) {
-    if (root == NULL) return 0;
+    left = LCA(root.left, p, q)
+    right = LCA(root.right, p, q)
 
-    int left = helper(root->left, diameter);
-    int right = helper(root->right, diameter);
+    if left and right:
+        return root
+    return left if left else right`,problems:`LCA problems:
+1. Lowest Common Ancestor of Binary Tree
+2. Lowest Common Ancestor of BST
+3. Distance Between Two Nodes
+4. Nodes at Distance K
+5. Burning Tree`},
+ paths:{name:'Path Problems',tag:'Paths',subtitle:'Root-to-leaf, path sum, max path sum, and backtracking.',badges:['Path Sum','Backtracking','Max Path'],concept:`<ul><li>Path problems ask about node sequences.</li><li>Root-to-leaf uses backtracking.</li><li>Max path sum uses postorder and global answer.</li></ul>`,notes:`<ul><li>For all paths, push node before recursion and pop after recursion.</li><li>For max path sum, ignore negative branches using max(0, value).</li><li>Path Sum III often uses prefix-sum hashmap.</li></ul>`,viz:'tree',actions:[['Root to Leaf','rootLeafAnim'],['Max Path Sum','maxPathAnim'],['Path Sum 100','pathSumAnim']],c:`void rootToLeaf(Node *root, int path[], int len) {
+    if (root == NULL) return;
 
-    *diameter = max(*diameter, left + right);
-    return 1 + max(left, right);
-}</pre>
-  </section>
+    path[len++] = root->data;
 
-  <section class="card">
-    <h2>6. Tree Views and Level Problems</h2>
-    <div class="grid"><div class="mini"><h3>Left View</h3><p>First node of each level.</p></div><div class="mini"><h3>Right View</h3><p>Last node of each level.</p></div><div class="mini"><h3>Top View</h3><p>First node for each vertical column.</p></div><div class="mini"><h3>Bottom View</h3><p>Last node for each vertical column.</p></div><div class="mini"><h3>Zigzag</h3><p>Alternate level direction.</p></div><div class="mini"><h3>Vertical Order</h3><p>Group nodes by horizontal distance.</p></div></div>
-  </section>
+    if (root->left == NULL && root->right == NULL) {
+        printPath(path, len);
+        return;
+    }
 
-  <section id="heap" class="card">
-    <h2>7. Animated Heap</h2>
-    <p>Heap is a complete binary tree. Min heap: parent is smaller than children. Max heap: parent is larger.</p>
-    <div class="controls"><button class="btn primary" onclick="heapifyAnim()">Animate Min Heapify</button><button class="btn primary" onclick="heapExtractAnim()">Extract Min</button></div>
-    <div class="array" id="heapArray"></div><div class="info" id="heapInfo">Heap animation status.</div>
-    <pre class="code">// Min heap parent/child indexes
-parent = (i - 1) / 2
-left   = 2 * i + 1
-right  = 2 * i + 2</pre>
-  </section>
+    rootToLeaf(root->left, path, len);
+    rootToLeaf(root->right, path, len);
+}`,pseudo:`Backtracking path:
+    add current node
+    if leaf:
+        process path
+    go left
+    go right
+    remove current node
 
-  <section id="trie" class="card">
-    <h2>8. Animated Trie / Prefix Tree</h2>
-    <p>Trie is used for autocomplete, dictionary search, prefix problems and Word Search II.</p>
-    <div class="controls"><button class="btn primary" onclick="trieInsert('cat')">Insert cat</button><button class="btn primary" onclick="trieInsert('car')">Insert car</button><button class="btn primary" onclick="trieInsert('care')">Insert care</button><button class="btn primary" onclick="trieSearch('car')">Search car</button><button class="btn" onclick="resetTrie()">Reset Trie</button></div>
-    <div class="trie" id="trieView">root</div><div class="info" id="trieInfo">Trie status.</div>
-    <pre class="code">typedef struct TrieNode {
+Max path:
+    left = max(0, solve(left))
+    right = max(0, solve(right))
+    answer = max(answer, left + root + right)
+    return root + max(left, right)`,problems:`Path problems:
+1. Path Sum
+2. Path Sum II
+3. Path Sum III
+4. Binary Tree Paths
+5. Sum Root to Leaf Numbers
+6. Binary Tree Maximum Path Sum`},
+ views:{name:'Tree Views',tag:'BFS',subtitle:'Left view, right view, top view, bottom view, vertical order, zigzag.',badges:['Left View','Right View','Top View','Vertical','Zigzag'],concept:`<ul><li>Views are usually BFS level-order or horizontal-distance problems.</li><li>Left/right view uses first/last node at each level.</li><li>Top/bottom/vertical use column index.</li></ul>`,notes:`<ul><li>Queue can store pair: node + horizontal distance.</li><li>Top view stores first node per column.</li><li>Bottom view overwrites node per column.</li><li>Zigzag uses reverse direction every level.</li></ul>`,viz:'tree',actions:[['Left View','view:left'],['Right View','view:right'],['Top View','view:top'],['Vertical','view:vertical']],c:`// Right side view idea
+while (!queueEmpty()) {
+    int size = queueSize();
+
+    for (int i = 0; i < size; i++) {
+        Node *node = pop();
+
+        if (i == size - 1)
+            print(node->data);
+
+        push children;
+    }
+}`,pseudo:`BFS level view:
+    for each level:
+        size = queue size
+        for i in 0..size-1:
+            node = pop
+            if left view and i == 0: record
+            if right view and i == size-1: record
+            push children
+
+Vertical:
+    queue stores node + column`,problems:`View problems:
+1. Binary Tree Right Side View
+2. Left View of Binary Tree
+3. Top View
+4. Bottom View
+5. Vertical Order Traversal
+6. Zigzag Level Order`},
+ construct:{name:'Build / Serialize Tree',tag:'Build',subtitle:'Construct tree from traversals and serialize/deserialize.',badges:['Preorder','Inorder','Serialize','Deserialize'],concept:`<ul><li>Tree construction tests recursion boundaries.</li><li>Preorder gives root first.</li><li>Postorder gives root last.</li><li>Inorder splits left and right subtree.</li></ul>`,notes:`<ul><li>Use hashmap for inorder index to avoid O(n²).</li><li>Serialization needs NULL markers.</li><li>Preorder serialization is simple and popular.</li></ul>`,viz:'text',actions:[['Build Tree','buildTreeAnim'],['Serialize','serializeAnim']],c:`// Preorder + Inorder concept
+Node* build(int pre[], int inLeft, int inRight) {
+    if (inLeft > inRight) return NULL;
+
+    int rootVal = pre[preIndex++];
+    Node *root = createNode(rootVal);
+
+    int mid = inorderIndex[rootVal];
+    root->left = build(pre, inLeft, mid - 1);
+    root->right = build(pre, mid + 1, inRight);
+
+    return root;
+}`,pseudo:`Build from preorder + inorder:
+    root = next preorder element
+    find root in inorder
+    left inorder part builds left subtree
+    right inorder part builds right subtree
+
+Serialize:
+    preorder traversal
+    write NULL for missing children`,problems:`Build/serialization problems:
+1. Construct Binary Tree from Preorder and Inorder
+2. Construct from Inorder and Postorder
+3. Serialize and Deserialize Binary Tree
+4. Convert Sorted Array to BST
+5. Flatten Binary Tree to Linked List`},
+ trie:{name:'Trie / Prefix Tree',tag:'Trie',subtitle:'Autocomplete, dictionary, prefix search, and Word Search II.',badges:['Prefix','Dictionary','Word Search'],concept:`<ul><li>Trie is a multi-child tree.</li><li>Each edge represents a character.</li><li>Search, insert and prefix lookup are O(word length).</li></ul>`,notes:`<ul><li>Use child[26] for lowercase letters.</li><li>Use isEnd to mark complete word.</li><li>Word Search II combines Trie + DFS backtracking.</li></ul>`,viz:'trie',actions:[['Insert cat','trie:cat'],['Insert car','trie:car'],['Insert care','trie:care'],['Search car','trieSearch:car'],['Reset Trie','trieReset']],c:`typedef struct TrieNode {
     struct TrieNode *child[26];
     int isEnd;
-} TrieNode;</pre>
-  </section>
+} TrieNode;
 
-  <section id="segment" class="card">
-    <h2>9. Animated Segment Tree</h2>
-    <p>Segment tree handles range queries like sum, min and max in O(log n).</p>
-    <div class="controls"><button class="btn primary" onclick="segBuildAnim()">Build Sum Tree</button><button class="btn primary" onclick="segQueryAnim()">Query Sum [1,3]</button><button class="btn primary" onclick="segUpdateAnim()">Update index 2 = 10</button></div>
-    <div class="array" id="segArray"></div><div class="info" id="segInfo">Segment tree status.</div>
-    <pre class="code">// Segment tree query idea
-if query fully covers node range:
-    return node value
-if no overlap:
-    return 0
-else:
-    return left query + right query</pre>
-  </section>
-
-  <section class="card">
-    <h2>10. Binary Tree Construction Patterns</h2>
-    <p>FAANG often asks you to rebuild a tree from traversal arrays. This tests recursion, index mapping, and subtree boundaries.</p>
-    <div class="grid">
-      <div class="mini"><h3>Preorder + Inorder</h3><p>Preorder gives root first. Inorder splits left and right subtree.</p></div>
-      <div class="mini"><h3>Postorder + Inorder</h3><p>Postorder gives root last. Inorder again splits the tree.</p></div>
-      <div class="mini"><h3>Sorted Array to BST</h3><p>Middle element becomes root to keep tree balanced.</p></div>
-    </div>
-    <pre class="code">// Build Balanced BST from sorted array
-Node* buildBST(int arr[], int left, int right) {
-    if (left > right) return NULL;
-
-    int mid = left + (right - left) / 2;
-    Node *root = createNode(arr[mid]);
-
-    root->left = buildBST(arr, left, mid - 1);
-    root->right = buildBST(arr, mid + 1, right);
-
-    return root;
-}</pre>
-  </section>
-
-  <section class="card">
-    <h2>11. BST Delete - All 3 Cases</h2>
-    <p>BST delete is one of the most misunderstood tree algorithms. Always remember the 3 cases.</p>
-    <div class="grid">
-      <div class="mini"><h3>Case 1: Leaf Node</h3><p>Just delete it and return NULL.</p></div>
-      <div class="mini"><h3>Case 2: One Child</h3><p>Return the existing child to connect it with parent.</p></div>
-      <div class="mini"><h3>Case 3: Two Children</h3><p>Replace with inorder successor or predecessor.</p></div>
-    </div>
-    <pre class="code">Node* minValueNode(Node *root) {
-    Node *curr = root;
-    while (curr && curr->left != NULL)
-        curr = curr->left;
-    return curr;
-}
-
-Node* deleteBST(Node *root, int key) {
-    if (root == NULL) return root;
-
-    if (key < root->data)
-        root->left = deleteBST(root->left, key);
-    else if (key > root->data)
-        root->right = deleteBST(root->right, key);
-    else {
-        // Case 1 and 2
-        if (root->left == NULL) {
-            Node *temp = root->right;
-            free(root);
-            return temp;
-        }
-        if (root->right == NULL) {
-            Node *temp = root->left;
-            free(root);
-            return temp;
-        }
-
-        // Case 3: two children
-        Node *succ = minValueNode(root->right);
-        root->data = succ->data;
-        root->right = deleteBST(root->right, succ->data);
-    }
-    return root;
-}</pre>
-  </section>
-
-  <section class="card">
-    <h2>12. Maximum Path Sum</h2>
-    <p>This is a hard FAANG favorite. At every node, ask: what is the best path I can pass upward, and what is the best path using this node as the highest turning point?</p>
-    <div class="mini"><h3>Key Idea</h3><p>Return only one side upward, but update global answer using left + root + right.</p></div>
-    <pre class="code">int maxPathHelper(Node *root, int *answer) {
-    if (root == NULL) return 0;
-
-    int left = maxPathHelper(root->left, answer);
-    int right = maxPathHelper(root->right, answer);
-
-    if (left < 0) left = 0;
-    if (right < 0) right = 0;
-
-    int throughRoot = root->data + left + right;
-    if (throughRoot > *answer)
-        *answer = throughRoot;
-
-    return root->data + (left > right ? left : right);
-}</pre>
-  </section>
-
-  <section class="card">
-    <h2>13. Serialize / Deserialize Tree</h2>
-    <p>Serialization converts a tree into a string. Deserialization rebuilds the same tree. This is used in distributed systems, storage, testing and interview hard problems.</p>
-    <pre class="code">Example Tree:
-        1
-       / \
-      2   3
-
-Preorder Serialization:
-1,2,NULL,NULL,3,NULL,NULL</pre>
-    <div class="grid">
-      <div class="mini"><h3>Why NULL matters?</h3><p>Without NULL markers, many different trees can create the same traversal string.</p></div>
-      <div class="mini"><h3>Best Traversal</h3><p>Preorder is common because root is processed before subtrees.</p></div>
-      <div class="mini"><h3>Complexity</h3><p>Serialize O(n), deserialize O(n).</p></div>
-    </div>
-  </section>
-
-  <section class="card">
-    <h2>14. Tree Views - Implementation Thinking</h2>
-    <table><tr><th>View</th><th>Technique</th><th>Interview Hint</th></tr><tr><td>Left View</td><td>BFS level order, take first node</td><td>Queue with level size</td></tr><tr><td>Right View</td><td>BFS level order, take last node</td><td>Same as left view</td></tr><tr><td>Top View</td><td>Horizontal distance + map</td><td>Store first node per column</td></tr><tr><td>Bottom View</td><td>Horizontal distance + map</td><td>Overwrite node per column</td></tr><tr><td>Vertical Order</td><td>Column index + sorted map</td><td>Use BFS for stable order</td></tr><tr><td>Boundary</td><td>Left boundary + leaves + right boundary</td><td>Avoid duplicate leaves</td></tr></table>
-  </section>
-
-  <section class="card">
-    <h2>15. Recursion Return Patterns</h2>
-    <p>Most tree problems become easy when you understand what each recursive call returns.</p>
-    <table><tr><th>Problem</th><th>Return Value</th><th>Global Update?</th></tr><tr><td>Height</td><td>height of subtree</td><td>No</td></tr><tr><td>Diameter</td><td>height of subtree</td><td>Yes, diameter</td></tr><tr><td>Balanced Tree</td><td>height or -1</td><td>No</td></tr><tr><td>Max Path Sum</td><td>best single-side path</td><td>Yes, max path</td></tr><tr><td>LCA</td><td>matching node or ancestor</td><td>No</td></tr><tr><td>Subtree Check</td><td>true/false</td><td>No</td></tr></table>
-  </section>
-
-  <section class="card">
-    <h2>16. Advanced FAANG Tree Patterns</h2>
-    <div class="grid">
-      <div class="mini"><h3>Parent Mapping</h3><p>Used in distance K nodes, burning tree, finding nodes upward from target.</p></div>
-      <div class="mini"><h3>Backtracking</h3><p>Used in root-to-leaf paths, path sum II, binary tree paths.</p></div>
-      <div class="mini"><h3>Monotonic / Ordered Data</h3><p>Used with BST inorder for sorted output and kth smallest.</p></div>
-      <div class="mini"><h3>Hash Map + Tree</h3><p>Used in path sum III and build tree from traversals.</p></div>
-      <div class="mini"><h3>Queue Level Size</h3><p>Used in views, zigzag, level average and cousins.</p></div>
-      <div class="mini"><h3>Divide and Conquer</h3><p>Used in sorted array to BST and tree construction.</p></div>
-    </div>
-  </section>
-
-  <section class="card">
-    <h2>17. Trie - Detailed Notes</h2>
-    <p>Trie is not exactly a binary tree. It is a multi-child tree, usually with 26 children for lowercase letters.</p>
-    <table><tr><th>Operation</th><th>Complexity</th><th>Reason</th></tr><tr><td>Insert word</td><td>O(L)</td><td>L is word length</td></tr><tr><td>Search word</td><td>O(L)</td><td>Check each character</td></tr><tr><td>Prefix search</td><td>O(L)</td><td>Stop at prefix end</td></tr></table>
-    <pre class="code">void insertTrie(TrieNode *root, char *word) {
+void insertTrie(TrieNode *root, char *word) {
     TrieNode *curr = root;
 
-    for (int i = 0; word[i] != '
+    for (int i = 0; word[i] != '\0'; i++) {
+        int idx = word[i] - 'a';
+        if (curr->child[idx] == NULL)
+            curr->child[idx] = createTrieNode();
+        curr = curr->child[idx];
+    }
+    curr->isEnd = 1;
+}`,pseudo:`Insert word:
+    curr = root
+    for char in word:
+        if child does not exist:
+            create child
+        move curr
+    mark isEnd
+
+Search:
+    walk character by character
+    final node must have isEnd`,problems:`Trie problems:
+1. Implement Trie
+2. Design Add and Search Words
+3. Word Search II
+4. Replace Words
+5. Longest Word in Dictionary
+6. Prefix and Suffix Search`},
+ heap:{name:'Heap',tag:'Heap',subtitle:'Priority queue tree for top K and streaming problems.',badges:['Min Heap','Max Heap','Top K','Median'],concept:`<ul><li>Heap is a complete binary tree stored as array.</li><li>Min heap keeps smallest element at root.</li><li>Max heap keeps largest element at root.</li></ul>`,notes:`<ul><li>Parent index = (i-1)/2.</li><li>Left child = 2*i+1.</li><li>Right child = 2*i+2.</li><li>Insert/extract takes O(log n).</li></ul>`,viz:'array',actions:[['Heapify','heapify'],['Extract Min','extractMin'],['Insert 1','heapInsert']],c:`// Heap index formulas
+parent = (i - 1) / 2;
+left   = 2 * i + 1;
+right  = 2 * i + 2;
+
+// Min heap rule:
+// parent <= children`,pseudo:`Heapify down:
+    compare node with children
+    swap with smallest child
+    continue until heap property is restored
+
+Use heap when:
+    top K
+    priority
+    kth largest
+    median stream`,problems:`Heap problems:
+1. Kth Largest Element
+2. Top K Frequent Elements
+3. Merge K Sorted Lists
+4. Find Median from Data Stream
+5. Last Stone Weight
+6. Task Scheduler`},
+ segment:{name:'Segment Tree',tag:'Range',subtitle:'Range query and update structure.',badges:['Range Sum','Range Min','Update','Lazy'],concept:`<ul><li>Segment tree answers range queries fast.</li><li>Build O(n), query O(log n), update O(log n).</li><li>Use when array changes and queries continue.</li></ul>`,notes:`<ul><li>For static range sum, prefix sum is simpler.</li><li>For updates + queries, segment tree is powerful.</li><li>Lazy propagation handles range updates.</li></ul>`,viz:'array',actions:[['Build','segBuild'],['Query [1,3]','segQuery'],['Update i=2','segUpdate']],c:`// Segment tree query idea
+int query(node, start, end, l, r) {
+    if (r < start || end < l)
+        return 0;
+
+    if (l <= start && end <= r)
+        return tree[node];
+
+    int mid = (start + end) / 2;
+    return query(leftChild, start, mid, l, r) +
+           query(rightChild, mid + 1, end, l, r);
+}`,pseudo:`Build:
+    leaf = array value
+    internal node = left + right
+
+Query:
+    no overlap -> return 0
+    full overlap -> return node value
+    partial -> query both sides
+
+Update:
+    update leaf
+    recompute ancestors`,problems:`Segment tree problems:
+1. Range Sum Query Mutable
+2. Count of Smaller Numbers After Self
+3. Range Minimum Query
+4. My Calendar problems
+5. Falling Squares
+6. Lazy Propagation problems`},
+ roadmap:{name:'30-Day Roadmap',tag:'Plan',subtitle:'Compact plan to master Trees for FAANG interviews.',badges:['Plan','Practice','FAANG'],concept:`<ol><li>Days 1-3: Basics + DFS</li><li>Days 4-6: BFS + views</li><li>Days 7-10: BST</li><li>Days 11-15: recursive patterns</li><li>Days 16-19: LCA + paths</li><li>Days 20-23: build + serialize</li><li>Days 24-26: Trie</li><li>Days 27-28: Heap</li><li>Days 29-30: Segment tree</li></ol>`,notes:`<ul><li>Do not memorize solutions blindly.</li><li>Memorize patterns: DFS return, BFS level size, BST bounds.</li><li>For every problem, say time and space complexity.</li></ul>`,viz:'roadmap',actions:[['Animate Plan','roadmapAnim']],c:`Interview template:
+
+1. Identify tree type
+2. Choose traversal
+3. Define function return value
+4. Handle NULL base case
+5. Combine left and right answers
+6. Explain time and space complexity`,pseudo:`Recognition:
+level / row       -> BFS
+height / path     -> DFS
+sorted / kth      -> BST inorder
+ancestor          -> LCA
+prefix            -> Trie
+top K             -> Heap
+range query       -> Segment Tree`,problems:`Final must-solve list:
+Easy:
+- Max Depth
+- Same Tree
+- Invert Tree
+- Symmetric Tree
+
+Medium:
+- Level Order
+- Validate BST
+- LCA
+- Kth Smallest
+- Build Tree
+
+Hard:
+- Max Path Sum
+- Serialize/Deserialize
+- Vertical Traversal
+- Word Search II
+- Count Smaller`}
+};
+
+function renderTopics(){const q=document.getElementById('search').value.toLowerCase();const list=document.getElementById('topicList');const mobile=document.getElementById('mobileTopic');list.innerHTML='';mobile.innerHTML='';Object.entries(topics).forEach(([id,t])=>{if(q && !(t.name.toLowerCase().includes(q)||t.tag.toLowerCase().includes(q)))return;const b=document.createElement('button');b.className='topic '+(id===current?'active':'');b.onclick=()=>loadTopic(id);b.innerHTML=`<span>${t.name}</span><span class="tag">${t.tag}</span>`;list.appendChild(b);const o=document.createElement('option');o.value=id;o.textContent=t.name;if(id===current)o.selected=true;mobile.appendChild(o)});mobile.onchange=e=>loadTopic(e.target.value)}
+function loadTopic(id){stopAnim();current=id;codeMode='c';const t=topics[id];document.getElementById('topicTitle').textContent=t.name;document.getElementById('topicSubtitle').textContent=t.subtitle;document.getElementById('badges').innerHTML=t.badges.map(x=>`<span class="badge">${x}</span>`).join('');document.getElementById('concept').innerHTML=t.concept;document.getElementById('notes').innerHTML=t.notes;document.getElementById('controls').innerHTML=t.actions.map(a=>`<button class="${a[1].includes('Reset')?'danger':'primary'}" onclick="doAction('${a[1]}')">${a[0]}</button>`).join('')+'<button onclick="resetCurrent()">Reset</button>';renderViz(t.viz);showCode('c');setStatus('Ready: '+t.name);renderTopics()}
+function showCode(mode){codeMode=mode;['tabC','tabP','tabProblems'].forEach(id=>document.getElementById(id).classList.remove('active'));document.getElementById(mode==='c'?'tabC':mode==='pseudo'?'tabP':'tabProblems').classList.add('active');document.getElementById('codeBox').textContent=topics[current][mode]}
+function renderViz(type){const s=document.getElementById('stage');if(type==='tree'){s.innerHTML='<svg class="treeSvg" id="treeSvg" viewBox="0 0 760 410"></svg>';drawTree()}else if(type==='array'){s.innerHTML='<div class="arr" id="arrViz"></div><div class="textviz" id="arrayNote"></div>';renderArray(current==='heap'?[9,5,6,2,3]:[2,1,5,3,4])}else if(type==='trie'){s.innerHTML='<div class="textviz" id="trieViz">root</div>'}else if(type==='text'){s.innerHTML='<div class="textviz" id="textViz">Preorder: 1,2,4,5,3\nInorder : 4,2,5,1,3\n\nClick animation to see construction idea.</div>'}else if(type==='roadmap'){s.innerHTML='<div class="arr" id="roadmapViz"></div>';renderRoadmap([])} }
+function drawTree(){const svg=document.getElementById('treeSvg');if(!svg)return;svg.innerHTML='';baseEdges.forEach(([a,b])=>{const [x1,y1]=baseNodes[a], [x2,y2]=baseNodes[b];svg.innerHTML+=`<line class="edge" id="e${a}-${b}" x1="${x1}" y1="${y1+28}" x2="${x2}" y2="${y2-28}"/>`});Object.entries(baseNodes).forEach(([v,[x,y]])=>{svg.innerHTML+=`<g class="node" id="n${v}"><circle cx="${x}" cy="${y}" r="31"></circle><text x="${x}" y="${y}">${v}</text></g>`})}
+function resetCurrent(){stopAnim();renderViz(topics[current].viz);setStatus('Reset done. Ready: '+topics[current].name)}
+function node(v){return document.getElementById('n'+v)}function edge(a,b){return document.getElementById('e'+a+'-'+b)}
+async function mark(v,msg,token){if(token!==animToken)return false;const n=node(v);if(!n)return true;n.classList.add('active');setStatus(msg);await sleep(550);if(token!==animToken)return false;n.classList.remove('active');n.classList.add('visited');return true}
+async function doAction(action){stopAnim();const token=++animToken;setBar(0);if(action.startsWith('runOrder:'))return runOrder(action.split(':')[1],token);if(action==='animateBasics')return animateBasics(token);if(action==='bstSearch')return bstSearch(token);if(action==='bstInsert')return bstInsert(token);if(action==='bstDelete')return bstDelete(token);if(action==='bstValidate')return bstValidate(token);if(action==='heightAnim')return heightAnim(token);if(action==='diameterAnim')return diameterAnim(token);if(action==='balanceAnim')return balanceAnim(token);if(action.startsWith('lca:')){const[,a,b]=action.split(':');return lcaAnim(+a,+b,token)}if(action==='rootLeafAnim')return rootLeafAnim(token);if(action==='maxPathAnim')return maxPathAnim(token);if(action==='pathSumAnim')return pathSumAnim(token);if(action.startsWith('view:'))return viewAnim(action.split(':')[1],token);if(action==='buildTreeAnim')return buildTreeAnim(token);if(action==='serializeAnim')return serializeAnim(token);if(action.startsWith('trie:'))return trieInsert(action.split(':')[1],token);if(action.startsWith('trieSearch:'))return trieSearch(action.split(':')[1],token);if(action==='trieReset')return resetTrie();if(action==='heapify')return heapify(token);if(action==='extractMin')return extractMin(token);if(action==='heapInsert')return heapInsert(token);if(action==='segBuild')return segBuild(token);if(action==='segQuery')return segQuery(token);if(action==='segUpdate')return segUpdate(token);if(action==='roadmapAnim')return roadmapAnim(token)}
+async function animateBasics(token){renderViz('tree');const labels=[[50,'Root node'],[20,'Leaf node'],[40,'Leaf node'],[70,'Parent node'],[60,'Child node']];for(let i=0;i<labels.length;i++){if(!await mark(labels[i][0],labels[i][1],token))return;setBar((i+1)/labels.length*100)}setStatus('Tree basics complete: root, parent, child, leaf, edge, subtree.')}
+async function runOrder(type,token){renderViz('tree');const orders={inorder:[20,30,40,50,60,70,80],preorder:[50,30,20,40,70,60,80],postorder:[20,40,30,60,80,70,50],bfs:[50,30,70,20,40,60,80]};let out=[];for(let i=0;i<orders[type].length;i++){const v=orders[type][i];if(!await mark(v,`${type.toUpperCase()} visiting ${v}<br>Output: ${out.join(' → ')}`,token))return;out.push(v);setBar((i+1)/orders[type].length*100)}setStatus(`<b>${type.toUpperCase()} output:</b> ${out.join(' → ')}`)}
+async function bstSearch(token){renderViz('tree');const path=[50,70,60];for(let i=0;i<path.length;i++){const v=path[i];if(!await mark(v,`Search 60: compare with ${v}`,token))return;if(i<path.length-1){const e=edge(v,path[i+1]);if(e)e.classList.add('active')}setBar((i+1)/path.length*100)}node(60).classList.add('target');setStatus('Found 60. Path: 50 → 70 → 60.')}
+async function bstInsert(token){renderViz('tree');const path=[50,70,60];for(let i=0;i<path.length;i++){if(!await mark(path[i],`Insert 65: compare with ${path[i]}`,token))return;setBar((i+1)/4*100)}const svg=document.getElementById('treeSvg');svg.innerHTML+=`<line class="edge active" x1="450" y1="304" x2="505" y2="350"/><g class="node active" id="n65"><circle cx="520" cy="374" r="31"></circle><text x="520" y="374">65</text></g>`;setBar(100);setStatus('65 inserted as right child of 60.')}
+async function bstDelete(token){renderViz('tree');node(70).classList.add('target');setStatus('Delete 70: node has two children. Need inorder successor.');await sleep(900);if(token!==animToken)return;node(80).classList.add('active');setStatus('Inorder successor of 70 is 80: smallest value in right subtree.');await sleep(900);if(token!==animToken)return;node(70).querySelector('text').textContent='80';node(80).classList.add('dim');setStatus('Replace 70 with 80, then remove old 80 leaf.');setBar(100)}
+async function bstValidate(token){renderViz('tree');const path=[50,30,20,40,70,60,80];for(let i=0;i<path.length;i++){if(!await mark(path[i],`Validate BST bounds at node ${path[i]}`,token))return;setBar((i+1)/path.length*100)}setStatus('BST valid: every node follows min/max range, not only local child rule.')}
+async function heightAnim(token){renderViz('tree');const levels=[[50],[30,70],[20,40,60,80]];for(let i=0;i<levels.length;i++){for(const v of levels[i])node(v).classList.add('active');setStatus('Height calculation: visiting level '+(i+1));await sleep(700);if(token!==animToken)return;for(const v of levels[i]){node(v).classList.remove('active');node(v).classList.add('visited')}setBar((i+1)/levels.length*100)}setStatus('Height = 3 nodes, or 2 edges depending on definition.')}
+async function diameterAnim(token){renderViz('tree');const p=[20,30,50,70,80];for(let i=0;i<p.length;i++){if(!await mark(p[i],`Diameter path candidate: ${p.slice(0,i+1).join(' → ')}`,token))return;setBar((i+1)/p.length*100)}setStatus('Diameter path: 20 → 30 → 50 → 70 → 80. Length = 4 edges.')}
+async function balanceAnim(token){renderViz('tree');const order=[20,40,30,60,80,70,50];for(let i=0;i<order.length;i++){if(!await mark(order[i],`Postorder balance check at ${order[i]}`,token))return;setBar((i+1)/order.length*100)}setStatus('Balanced: every node has |left height - right height| ≤ 1.')}
+async function lcaAnim(a,b,token){renderViz('tree');node(a).classList.add('target');node(b).classList.add('target');const ans=(a===20&&b===40)?30:(a===60&&b===80)?70:50;setStatus(`Find LCA(${a}, ${b}). Search left and right subtrees.`);await sleep(800);if(token!==animToken)return;node(ans).classList.add('active');setBar(100);setStatus(`LCA(${a}, ${b}) = ${ans}. This is the lowest node where both targets meet.`)}
+async function rootLeafAnim(token){renderViz('tree');const p=[50,30,20];for(let i=0;i<p.length;i++){if(!await mark(p[i],`Backtracking path: ${p.slice(0,i+1).join(' → ')}`,token))return;setBar((i+1)/p.length*100)}setStatus('Root-to-leaf path found: 50 → 30 → 20. Then recursion backtracks.')}
+async function maxPathAnim(token){renderViz('tree');const p=[20,30,50,70,80];for(let i=0;i<p.length;i++){if(!await mark(p[i],`Max path candidate includes ${p[i]}`,token))return;setBar((i+1)/p.length*100)}setStatus('Max path uses left + root + right at a turning node, but returns only one side upward.')}
+async function pathSumAnim(token){renderViz('tree');const p=[50,30,20];let sum=0;for(let i=0;i<p.length;i++){sum+=p[i];if(!await mark(p[i],`Path sum so far = ${sum}`,token))return;setBar((i+1)/p.length*100)}setStatus('Path 50 + 30 + 20 = 100 found.')}
+async function viewAnim(type,token){renderViz('tree');let vals={left:[50,30,20],right:[50,70,80],top:[20,30,50,70,80],vertical:[20,30,40,50,60,70,80]}[type];for(let i=0;i<vals.length;i++){if(!await mark(vals[i],`${type} view selects/checks ${vals[i]}`,token))return;setBar((i+1)/vals.length*100)}setStatus(`${type.toUpperCase()} view result: ${vals.join(' → ')}`)}
+async function buildTreeAnim(token){renderViz('text');const lines=['Preorder root = 1','Find 1 in inorder','Left inorder = 4,2,5','Right inorder = 3','Recursively build left and right subtrees','Tree construction complete'];for(let i=0;i<lines.length;i++){document.getElementById('textViz').textContent=lines.slice(0,i+1).join('\n');setStatus(lines[i]);setBar((i+1)/lines.length*100);await sleep(750);if(token!==animToken)return}}
+async function serializeAnim(token){renderViz('text');const seq=['1','2','NULL','NULL','3','NULL','NULL'];for(let i=0;i<seq.length;i++){document.getElementById('textViz').textContent='Serialized preorder:\n'+seq.slice(0,i+1).join(',');setStatus('Writing '+seq[i]);setBar((i+1)/seq.length*100);await sleep(500);if(token!==animToken)return}setStatus('Serialization needs NULL markers to preserve exact shape.')}
+let trieWords=[];function trieText(){let root={};for(const w of trieWords){let cur=root;for(const ch of w){cur[ch]=cur[ch]||{};cur=cur[ch]}cur['$']={}}function rec(obj,ind){let s='';for(const k of Object.keys(obj).sort()){s+=ind+k+(k==='$'?'  (end)':'')+'\n';s+=rec(obj[k],ind+'  ')}return s}return 'root\n'+rec(root,'  ')}async function trieInsert(w,token){for(let i=0;i<w.length;i++){setStatus(`Insert ${w}: create/follow '${w[i]}'`);setBar((i+1)/w.length*85);await sleep(450);if(token!==animToken)return}if(!trieWords.includes(w))trieWords.push(w);document.getElementById('trieViz').textContent=trieText();setBar(100);setStatus(`${w} inserted. isEnd marked at final character.`)}async function trieSearch(w,token){for(let i=0;i<w.length;i++){setStatus(`Search ${w}: checking '${w[i]}'`);setBar((i+1)/w.length*100);await sleep(450);if(token!==animToken)return}setStatus(trieWords.includes(w)?`${w} found.`:`${w} not found. Insert it first.`)}function resetTrie(){trieWords=[];renderViz('trie');setStatus('Trie reset.')} 
+function renderArray(arr,active=[],done=[]){const el=document.getElementById('arrViz');if(!el)return;el.innerHTML=arr.map((v,i)=>`<div class="box ${active.includes(i)?'active':''} ${done.includes(i)?'done':''}">${v}</div>`).join('')}let heap=[9,5,6,2,3];async function heapify(token){heap=[9,5,6,2,3];renderArray(heap);const swaps=[[0,1],[1,3],[0,1]];for(let i=0;i<swaps.length;i++){const[a,b]=swaps[i];renderArray(heap,[a,b]);setStatus(`Heapify: compare ${heap[a]} and ${heap[b]}`);setBar((i+1)/swaps.length*80);await sleep(800);if(token!==animToken)return;if(heap[a]>heap[b])[heap[a],heap[b]]=[heap[b],heap[a]];renderArray(heap,[a,b]);await sleep(450)}renderArray(heap,[],heap.map((_,i)=>i));setBar(100);setStatus('Min heap ready: '+heap.join(', '))}async function extractMin(token){await heapify(token);if(token!==animToken)return;await sleep(400);setStatus('Extract min = '+heap[0]);renderArray(heap,[0]);await sleep(700);if(token!==animToken)return;heap[0]=heap.pop();renderArray(heap,[0]);setStatus('Move last element to root, then heapify down.');await sleep(700);if(heap[0]>heap[1])[heap[0],heap[1]]=[heap[1],heap[0]];renderArray(heap,[],heap.map((_,i)=>i));setStatus('After extract min: '+heap.join(', '));setBar(100)}async function heapInsert(token){heap=[2,3,6,9,5];renderArray(heap);await sleep(400);heap.push(1);renderArray(heap,[5]);setStatus('Insert 1 at end, then bubble up.');await sleep(800);if(token!==animToken)return;[heap[5],heap[2]]=[heap[2],heap[5]];renderArray(heap,[2,5]);await sleep(700);[heap[2],heap[0]]=[heap[0],heap[2]];renderArray(heap,[],heap.map((_,i)=>i));setStatus('1 bubbled up to root.');setBar(100)}
+let seg=[2,1,5,3,4];async function segBuild(token){seg=[2,1,5,3,4];renderArray(seg);const steps=['Build leaves from original array','Combine [0,1] = 3','Combine [2,4] = 12','Root sum [0,4] = 15'];for(let i=0;i<steps.length;i++){setStatus(steps[i]);setBar((i+1)/steps.length*100);await sleep(700);if(token!==animToken)return}}async function segQuery(token){renderArray(seg,[1,2,3]);setStatus('Query [1,3]: visit only useful ranges. Sum = 1 + 5 + 3 = 9.');setBar(100)}async function segUpdate(token){renderArray(seg,[2]);setStatus('Update index 2 from 5 to 10.');await sleep(800);if(token!==animToken)return;seg[2]=10;renderArray(seg,[2]);setStatus('Ancestors recomputed. New total = 20.');setBar(100)}
+function renderRoadmap(active=[]){const arr=['DFS','BFS','BST','LCA','Paths','Build','Trie','Heap','Segment'];document.getElementById('roadmapViz').innerHTML=arr.map((v,i)=>`<div class="box ${active.includes(i)?'active':''} ${active.length>i?'done':''}" style="width:88px">${v}</div>`).join('')}async function roadmapAnim(token){for(let i=0;i<9;i++){renderRoadmap([i]);setStatus('Practice phase '+(i+1));setBar((i+1)/9*100);await sleep(500);if(token!==animToken)return}setStatus('Roadmap complete: revise patterns, then solve mixed problems.')}
+function toggleTheme(){document.body.classList.toggle('light')}loadTopic('basics');
+</script>
+</body>
+</html>
