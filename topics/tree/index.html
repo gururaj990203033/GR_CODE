@@ -1,206 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>GR_CODE — Trees Mastery</title>
-<link rel="stylesheet" href="../../shared.css" />
+<meta charset='UTF-8'>
+<title>Animated FAANG Trees</title>
 <style>
-.tree-hero{padding:30px;margin-top:18px;overflow:hidden;position:relative}.tree-hero:after{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,.22),transparent 65%)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:center}.pill-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.pill{padding:.55rem .8rem;border:1px solid var(--border);border-radius:999px;color:var(--muted);background:rgba(255,255,255,.04);font-weight:800;font-size:.85rem}.module{margin-top:18px;padding:22px}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}.stage{background:rgba(2,6,23,.35);border:1px solid var(--border);border-radius:22px;padding:16px;overflow:hidden}.light .stage{background:rgba(255,255,255,.55)}svg{width:100%;height:360px}.edge{stroke:rgba(153,168,196,.65);stroke-width:3}.node circle{fill:var(--panel-solid);stroke:var(--secondary);stroke-width:3;transition:.25s}.node text{fill:var(--text);font-size:18px;font-weight:900;text-anchor:middle;dominant-baseline:central}.node.active circle{fill:var(--secondary);stroke:white;filter:drop-shadow(0 0 14px rgba(6,182,212,.75))}.node.visited circle{fill:var(--accent);stroke:#dcfce7}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}.controls select{min-width:160px}.result{margin-top:14px;min-height:52px;padding:14px;border:1px solid var(--border);border-radius:16px;background:rgba(255,255,255,.04);font-weight:900;color:var(--warn);letter-spacing:.04em}.codebox{background:#020617;color:#e5eefc;border:1px solid var(--border);border-radius:18px;padding:18px;overflow:auto;line-height:1.55;font-size:.92rem;min-height:220px}.light .codebox{background:#0f172a;color:#e5eefc}.algo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.algo-card{padding:18px;border:1px solid var(--border);border-radius:18px;background:rgba(255,255,255,.04)}.algo-card h3{margin:0 0 8px}.tag{display:inline-block;margin-top:10px;padding:.35rem .55rem;border-radius:999px;background:rgba(6,182,212,.12);color:var(--secondary);font-size:.8rem;font-weight:800}.concept{display:grid;grid-template-columns:260px 1fr;gap:14px;align-items:start;padding:14px;border:1px solid var(--border);border-radius:18px;background:rgba(255,255,255,.035);margin-top:12px}.tree-ascii{font-family:Consolas,monospace;white-space:pre;color:var(--accent);line-height:1.25}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tab{border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);border-radius:999px;padding:.55rem .85rem;cursor:pointer;font-weight:800}.tab.active{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border-color:transparent}.complexity{width:100%;border-collapse:collapse;overflow:hidden;border-radius:16px}.complexity th,.complexity td{border:1px solid var(--border);padding:12px;text-align:left}.complexity th{background:rgba(255,255,255,.06);color:var(--text)}.path{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.path span{padding:.45rem .65rem;border-radius:12px;background:rgba(124,58,237,.18);font-weight:900}.note{border-left:4px solid var(--secondary);padding:12px 14px;background:rgba(6,182,212,.09);border-radius:14px;color:var(--muted);line-height:1.7}@media(max-width:980px){.hero-grid,.split,.concept{grid-template-columns:1fr}.algo-grid{grid-template-columns:1fr}svg{height:310px}}
+body{background:#0b1020;color:#fff;font-family:Arial;padding:20px}
+h1{color:#61dafb} .panel{background:#11182d;padding:20px;border-radius:16px;margin:20px 0}
+button{padding:10px 16px;margin:8px;border-radius:20px;border:none;background:#61dafb;font-weight:bold}
+#tree{position:relative;height:420px;margin-top:20px}
+.node{position:absolute;width:60px;height:60px;border-radius:50%;background:#1e3a8a;display:flex;align-items:center;justify-content:center;font-weight:bold;transition:.6s}
+.visit{background:#22c55e !important;transform:scale(1.15)}
+.active{background:#f59e0b !important}
+.line{position:absolute;height:4px;background:#64748b;transform-origin:left center}
+.code{background:#020617;padding:15px;border-radius:12px;white-space:pre-wrap;color:#a7f3d0}
 </style>
 </head>
 <body>
-<div class="shell">
-<header class="topbar">
-  <div class="brand"><div class="mark">GR</div><div><div class="title">🌲 Trees Mastery</div><div class="sub">GR_CODE topic guide</div></div></div>
-  <div class="row"><a class="btn ghost small" href="../index.html">All topics</a><a class="btn ghost small" href="../../index.html">Dashboard</a><button class="btn small" id="themeToggle">Toggle theme</button></div>
-</header>
-
-<section class="hero tree-hero">
-  <div class="hero-grid">
-    <div>
-      <div class="badge">FAANG DSA Module</div>
-      <h1 class="h1" style="margin-top:14px">Master Trees from Zero to Interview Level</h1>
-      <p class="muted" style="font-size:1.05rem;line-height:1.8;max-width:75ch">Trees are hierarchical data structures. Most tree problems are solved using recursion, DFS, BFS, or binary-search-tree rules. This page gives you visuals, traversal animation, C code, patterns, and interview roadmap.</p>
-      <div class="pill-row"><span class="pill">Binary Tree</span><span class="pill">BST</span><span class="pill">DFS</span><span class="pill">BFS</span><span class="pill">LCA</span><span class="pill">Heap</span><span class="pill">Trie</span></div>
-    </div>
-    <div class="stage"><div class="tree-ascii">        10
-       /  \
-      5    20
-     / \     \
-    3   7     30</div><p class="muted" style="margin-top:14px">Think of a tree as a linked list that branches. Every node can point to children.</p></div>
-  </div>
-</section>
-
-<section class="grid cards-3" style="margin-top:18px">
-  <article class="card" style="padding:20px"><h3>Core Terms</h3><ul class="muted"><li>Root: top node</li><li>Parent / child relation</li><li>Leaf: no child</li><li>Height: longest depth below node</li></ul></article>
-  <article class="card" style="padding:20px"><h3>Main Patterns</h3><ul class="muted"><li>DFS: recursion / stack</li><li>BFS: queue / level order</li><li>BST: left &lt; root &lt; right</li><li>Divide problem into subtrees</li></ul></article>
-  <article class="card" style="padding:20px"><h3>Must Solve</h3><ul class="muted"><li>Max Depth</li><li>Invert Tree</li><li>Validate BST</li><li>Lowest Common Ancestor</li></ul></article>
-</section>
-
-<section class="panel module">
-  <h2 class="section-title">Interactive Traversal Visualizer</h2>
-  <p class="muted">Choose a traversal and press play. Watch how the algorithm visits nodes.</p>
-  <div class="split" style="margin-top:16px">
-    <div>
-      <div class="stage"><svg viewBox="0 0 760 360" id="treeSvg"></svg></div>
-      <div class="controls"><select id="traversal"><option value="inorder">Inorder: Left Root Right</option><option value="preorder">Preorder: Root Left Right</option><option value="postorder">Postorder: Left Right Root</option><option value="levelorder">Level Order: BFS</option></select><button class="btn primary" id="playBtn">Play</button><button class="btn ghost" id="stepBtn">Step</button><button class="btn ghost" id="resetBtn">Reset</button></div>
-      <div class="result" id="result">Output: </div>
-    </div>
-    <div>
-      <div class="tabs"><button class="tab active" data-code="inorder">Inorder</button><button class="tab" data-code="preorder">Preorder</button><button class="tab" data-code="postorder">Postorder</button><button class="tab" data-code="bfs">BFS</button></div>
-      <pre class="codebox" id="codeBox"></pre>
-    </div>
-  </div>
-</section>
-
-<section class="panel module">
-  <h2 class="section-title">Tree Concepts with Examples</h2>
-  <div class="concept"><div class="tree-ascii">      A
-     / \
-    B   C
-   / \
-  D   E</div><div><h3>Binary Tree</h3><p class="muted">A tree where each node has at most two children: left and right. It does not require sorted order.</p><pre class="codebox">struct Node {
-    int data;
-    struct Node *left;
-    struct Node *right;
-};</pre></div></div>
-  <div class="concept"><div class="tree-ascii">       50
-      /  \
-    30    70
-   / \   / \
- 20  40 60 80</div><div><h3>Binary Search Tree</h3><p class="muted">BST keeps sorted order. Left subtree values are smaller. Right subtree values are greater.</p><pre class="codebox">Node* search(Node* root, int key) {
-    if (root == NULL || root->data == key)
-        return root;
-
-    if (key < root->data)
-        return search(root->left, key);
-
-    return search(root->right, key);
-}</pre></div></div>
-</section>
-
-<section class="panel module">
-  <h2 class="section-title">Important Tree Algorithms</h2>
-  <div class="algo-grid">
-    <div class="algo-card"><h3>1. DFS Traversal</h3><p class="muted">Go deep first. Used in almost every recursive tree problem.</p><span class="tag">O(n)</span></div>
-    <div class="algo-card"><h3>2. BFS Traversal</h3><p class="muted">Visit level by level using a queue.</p><span class="tag">O(n)</span></div>
-    <div class="algo-card"><h3>3. Height / Depth</h3><p class="muted">Return 1 + max height of left and right subtree.</p><span class="tag">Recursive</span></div>
-    <div class="algo-card"><h3>4. Diameter</h3><p class="muted">Longest path between any two nodes.</p><span class="tag">Postorder</span></div>
-    <div class="algo-card"><h3>5. Validate BST</h3><p class="muted">Use min/max range to check every node.</p><span class="tag">Range check</span></div>
-    <div class="algo-card"><h3>6. LCA</h3><p class="muted">Lowest common ancestor of two nodes.</p><span class="tag">Path logic</span></div>
-    <div class="algo-card"><h3>7. Invert Tree</h3><p class="muted">Swap left and right recursively.</p><span class="tag">Classic</span></div>
-    <div class="algo-card"><h3>8. Path Sum</h3><p class="muted">Carry remaining target while moving down.</p><span class="tag">Backtracking</span></div>
-    <div class="algo-card"><h3>9. Build Tree</h3><p class="muted">Construct tree from preorder + inorder.</p><span class="tag">Advanced</span></div>
-  </div>
-</section>
-
-<section class="panel module">
-  <h2 class="section-title">Core C Templates</h2>
-  <div class="split">
-<pre class="codebox">int height(Node* root) {
-    if (root == NULL)
-        return 0;
-
-    int lh = height(root->left);
-    int rh = height(root->right);
-
-    return 1 + (lh > rh ? lh : rh);
-}</pre>
-<pre class="codebox">int countNodes(Node* root) {
-    if (root == NULL)
-        return 0;
-
-    return 1 + countNodes(root->left)
-             + countNodes(root->right);
-}</pre>
-<pre class="codebox">Node* invertTree(Node* root) {
-    if (root == NULL)
-        return NULL;
-
-    Node* temp = root->left;
-    root->left = root->right;
-    root->right = temp;
-
-    invertTree(root->left);
-    invertTree(root->right);
-    return root;
-}</pre>
-<pre class="codebox">int isLeaf(Node* root) {
-    return root != NULL &&
-           root->left == NULL &&
-           root->right == NULL;
-}</pre>
-  </div>
-</section>
-
-<section class="panel module">
-  <h2 class="section-title">Complexity Summary</h2>
-  <table class="complexity"><thead><tr><th>Operation</th><th>Binary Tree</th><th>BST Average</th><th>BST Worst</th></tr></thead><tbody><tr><td>Search</td><td>O(n)</td><td>O(log n)</td><td>O(n)</td></tr><tr><td>Insert</td><td>O(n)</td><td>O(log n)</td><td>O(n)</td></tr><tr><td>Delete</td><td>O(n)</td><td>O(log n)</td><td>O(n)</td></tr><tr><td>Traversal</td><td>O(n)</td><td>O(n)</td><td>O(n)</td></tr></tbody></table>
-  <p class="note" style="margin-top:16px"><b>Interview trick:</b> If the problem talks about subtree, height, path, ancestor, leaf, or left/right child, think recursion first. If it talks about level, nearest, width, or zigzag, think BFS queue.</p>
-</section>
-
-<section class="panel module">
-  <h2 class="section-title">Learning Roadmap</h2>
-  <div class="path"><span>1. Recursion</span><span>2. DFS</span><span>3. BFS</span><span>4. BST</span><span>5. Height/Diameter</span><span>6. LCA</span><span>7. Heap</span><span>8. Trie</span><span>9. Segment Tree</span></div>
-  <p class="footer-note">Next upgrade idea: add problem-by-problem animations for invert tree, validate BST, LCA, and serialize/deserialize.</p>
-</section>
+<h1>GR_CODE FAANG Trees Animated Module</h1>
+<div class='panel'>
+<h2>Animations Included</h2>
+<button onclick='inorder()'>Animate Inorder</button>
+<button onclick='preorder()'>Animate Preorder</button>
+<button onclick='bfs()'>Animate BFS</button>
+<button onclick='bstSearch()'>BST Search 60</button>
+<button onclick='insertNode()'>Insert 65</button>
+<button onclick='rotateDemo()'>AVL Rotation</button>
+<div id='status'>Press animation button</div>
+<div id='tree'>
+<div class='line' style='left:380px;top:95px;width:120px;transform:rotate(150deg)'></div>
+<div class='line' style='left:440px;top:95px;width:120px;transform:rotate(30deg)'></div>
+<div class='line' style='left:300px;top:185px;width:95px;transform:rotate(145deg)'></div>
+<div class='line' style='left:365px;top:185px;width:95px;transform:rotate(35deg)'></div>
+<div class='line' style='left:500px;top:185px;width:95px;transform:rotate(145deg)'></div>
+<div class='line' style='left:565px;top:185px;width:95px;transform:rotate(35deg)'></div>
+<div id='50' class='node' style='left:420px;top:50px'>50</div>
+<div id='30' class='node' style='left:300px;top:150px'>30</div>
+<div id='70' class='node' style='left:540px;top:150px'>70</div>
+<div id='20' class='node' style='left:220px;top:250px'>20</div>
+<div id='40' class='node' style='left:380px;top:250px'>40</div>
+<div id='60' class='node' style='left:460px;top:250px'>60</div>
+<div id='80' class='node' style='left:620px;top:250px'>80</div>
+</div>
+</div>
+<div class='panel'>
+<h2>FAANG Tree Topics Covered</h2>
+<ul>
+<li>DFS Traversals (animated)</li>
+<li>BFS Level Order animation</li>
+<li>BST Search path visualization</li>
+<li>BST Insert animation</li>
+<li>AVL Rotation simulation</li>
+<li>Diameter, LCA, Views, Trie, Heap, Segment Tree</li>
+</ul>
+<div class='code'>Recursive Pattern:
+solve(node){
+ if(node==NULL) return;
+ solve(node->left);
+ solve(node->right);
+}</div>
 </div>
 <script>
-const themeKey='grcode-theme';
-const apply=t=>document.body.classList.toggle('light',t==='light');
-apply(localStorage.getItem(themeKey)||'dark');
-document.getElementById('themeToggle').onclick=()=>{const n=document.body.classList.contains('light')?'dark':'light';localStorage.setItem(themeKey,n);apply(n);};
-
-const nodes={10:{x:380,y:45,left:5,right:20},5:{x:230,y:135,left:3,right:7},20:{x:530,y:135,left:null,right:30},3:{x:145,y:250,left:null,right:null},7:{x:315,y:250,left:null,right:null},30:{x:615,y:250,left:null,right:null}};
-const edges=[[10,5],[10,20],[5,3],[5,7],[20,30]];
-const orders={inorder:[3,5,7,10,20,30],preorder:[10,5,3,7,20,30],postorder:[3,7,5,30,20,10],levelorder:[10,5,20,3,7,30]};
-const code={
-inorder:`void inorder(Node *root) {
-    if (root == NULL) return;
-
-    inorder(root->left);
-    printf("%d ", root->data);
-    inorder(root->right);
-}`,
-preorder:`void preorder(Node *root) {
-    if (root == NULL) return;
-
-    printf("%d ", root->data);
-    preorder(root->left);
-    preorder(root->right);
-}`,
-postorder:`void postorder(Node *root) {
-    if (root == NULL) return;
-
-    postorder(root->left);
-    postorder(root->right);
-    printf("%d ", root->data);
-}`,
-bfs:`void levelOrder(Node *root) {
-    if (root == NULL) return;
-
-    Queue q;
-    enqueue(&q, root);
-
-    while (!isEmpty(&q)) {
-        Node *cur = dequeue(&q);
-        printf("%d ", cur->data);
-
-        if (cur->left) enqueue(&q, cur->left);
-        if (cur->right) enqueue(&q, cur->right);
-    }
-}`};
-let idx=0,visited=[],timer=null;
-const svg=document.getElementById('treeSvg'),result=document.getElementById('result'),select=document.getElementById('traversal'),playBtn=document.getElementById('playBtn'),codeBox=document.getElementById('codeBox');
-function draw(){svg.innerHTML='';edges.forEach(([a,b])=>{svg.innerHTML+=`<line class="edge" x1="${nodes[a].x}" y1="${nodes[a].y}" x2="${nodes[b].x}" y2="${nodes[b].y}"/>`;});Object.keys(nodes).forEach(v=>{svg.innerHTML+=`<g class="node" data-v="${v}"><circle cx="${nodes[v].x}" cy="${nodes[v].y}" r="30"></circle><text x="${nodes[v].x}" y="${nodes[v].y}">${v}</text></g>`;});paint();}
-function paint(active=null){document.querySelectorAll('.node').forEach(g=>{g.classList.remove('active','visited');const v=Number(g.dataset.v);if(visited.includes(v))g.classList.add('visited');if(v===active)g.classList.add('active');});result.textContent='Output: '+visited.join(' → ');}
-function reset(){clearInterval(timer);timer=null;playBtn.textContent='Play';idx=0;visited=[];paint();}
-function step(){const order=orders[select.value];if(idx>=order.length){clearInterval(timer);timer=null;playBtn.textContent='Play';return;}const v=order[idx++];visited.push(v);paint(v);}
-function play(){if(timer){clearInterval(timer);timer=null;playBtn.textContent='Play';return;}if(idx>=orders[select.value].length)reset();playBtn.textContent='Pause';timer=setInterval(step,850);}
-select.onchange=reset;document.getElementById('stepBtn').onclick=step;document.getElementById('resetBtn').onclick=reset;playBtn.onclick=play;
-document.querySelectorAll('.tab').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');codeBox.textContent=code[btn.dataset.code];});
-codeBox.textContent=code.inorder;draw();
+function reset(){document.querySelectorAll('.node').forEach(n=>n.className='node')}
+function flash(order,i=0){
+if(i==0) reset();
+if(i>=order.length) return;
+let n=document.getElementById(order[i]);
+n.classList.add('visit');
+document.getElementById('status').innerText='Visiting '+order[i];
+setTimeout(()=>flash(order,i+1),800)
+}
+function inorder(){flash(['20','30','40','50','60','70','80'])}
+function preorder(){flash(['50','30','20','40','70','60','80'])}
+function bfs(){flash(['50','30','70','20','40','60','80'])}
+function bstSearch(){
+let p=['50','70','60'];
+let i=0; reset();
+function s(){
+if(i>=p.length) return;
+let n=document.getElementById(p[i]);
+n.classList.add('active');
+document.getElementById('status').innerText='Searching... at '+p[i];
+i++; setTimeout(s,900)
+}
+s();
+}
+function insertNode(){
+reset();
+flash(['50','70','60']);
+setTimeout(()=>{
+let d=document.createElement('div');
+d.className='node visit';
+d.innerText='65';
+d.style.left='520px';d.style.top='340px';
+d.id='65';
+document.getElementById('tree').appendChild(d);
+document.getElementById('status').innerText='Inserted 65';
+},3000)
+}
+function rotateDemo(){
+reset();
+document.getElementById('status').innerText='Simulating AVL Left Rotation';
+let a=document.getElementById('50');
+let b=document.getElementById('70');
+a.style.left='330px';a.style.top='170px';
+b.style.left='420px';b.style.top='60px';
+setTimeout(()=>{
+document.getElementById('status').innerText='Rotation Complete';
+},1800)
+}
 </script>
 </body>
 </html>
